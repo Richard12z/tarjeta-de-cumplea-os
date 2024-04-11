@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Cumpleaños</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .tarjeta {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid pink;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: pink;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+            margin-top: 0;
+        }
+        p {
+            color: #333;
+        }
+        .contenido {
+            padding: 20px;
+        }
+        .imagen {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease-in-out;
+            position: relative;
+        }
+        .imagen:hover {
+            transform: scale(1.1);
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 1;
+            display: none;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .imagen:hover .overlay {
+            display: block;
+        }
+        .overlay-content {
+            animation: slideIn 1s ease-in-out forwards;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        audio {
+            margin-top: 20px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="tarjeta">
+        <h1>¡Feliz Cumpleaños!</h1>
+        <div class="contenido">
+            <p>Hola Pelusa,</p>
+            <p>hoy es el día en que naciste y prácticamente comenzó aquella personita muy amable, adorable, hermosa, sensible y muy alegre, ayudaste a que el mundo sea mucho mejor.</p>
+            <p>Hoy quiero que sepas que estoy muy agradecido de tenerte y nos aseguraremos de disfrutar este día al máximo.</p>
+            <p>Los gatos te mandan muchos "meow meow meow" pelusa cumpleañera y el perrito panzón dice "wof wof" ¡Feliz cumpleaños a la pelusa!</p>
+        </div>
+        <div class="overlay">
+            <div class="overlay-content">
+                <p>Hola Pelusa,</p>
+                <p>hoy es el día en que naciste y prácticamente comenzó aquella personita muy amable, adorable, hermosa, sensible y muy alegre, ayudaste a que el mundo sea mucho mejor.</p>
+                <p>Hoy quiero que sepas que estoy muy agradecido de tenerte y nos aseguraremos de disfrutar este día al máximo.</p>
+                <p>Los gatos te mandan muchos "meow meow meow" pelusa cumpleañera y el perrito panzón dice "wof wof" ¡Feliz cumpleaños a la pelusa!</p>
+            </div>
+        </div>
+        <img src="imagen.jpg" alt="Imagen de cumpleaños" class="imagen">
+        <audio id="miAudio" loop controls>
+            <source src="cancion.mp3" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
+    <script>
+        var miAudio = document.getElementById("miAudio");
+        miAudio.addEventListener("click", function() {
+            if (miAudio.paused) {
+                miAudio.play();
+            } else {
+                miAudio.pause();
+            }
+        });
+    </script>
+</body>
+</html>
